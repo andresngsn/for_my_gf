@@ -1,0 +1,127 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container{
+    margin: 0;
+    width:500px;
+    height: 350px;
+    position: absolute;
+    top: 30%;
+    left: 33%;
+    transition: 0.5s
+}
+
+.envelope-back-inside{
+    background-color: rgb(120, 0, 0);
+    width: 100%;
+    height: 100%;
+    margin:0;
+    border: 2px solid black;
+    box-shadow: 10px 20px 10px #888888;
+}
+
+.card{
+    position:absolute;
+    background-color: rgb(240, 240, 240);
+    width: 85%;
+    height: 85%;
+    margin: 0;
+    transform: translate(40px, -340px);
+    
+}
+
+.card p{
+    font-size: 40px;
+    width: 50%;
+    height: 50%;
+    transform:translateX(124px);
+    
+}
+
+
+.card p:hover{
+    text-shadow:2px 2px rgb(0, 0, 0);
+    position:relative;
+    animation: mymove 1.5s ease-in-out infinite;
+    
+}
+
+@keyframes mymove {
+    0%{
+        transform:translate( 124px ,0px);
+    }
+
+    50%{
+        transform:translate(124px,-20px);
+    }
+
+    100%{
+        transform: translate(124px, 0px);
+    }
+
+}
+
+
+.right-front-fold{
+    width:0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-top: 350px solid transparent;
+    border-right: 454px solid rgb(160, 0, 0);
+    transform: translate(-2px, -352px);
+   
+}
+
+
+.left-front-fold{
+    width:0;
+    height:0;
+    margin:0;
+    border-left: 450px solid rgb(160, 0, 0);
+    border-top: 350px solid transparent;
+    border-right: 50px solid transparent;
+    transform:translate(2px, -702px);   
+    
+}
+
+.top-fold-closed{
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 200px solid rgb(140, 0, 0);
+    transform: translate(2px, -1050px);
+}
+
+.top-fold-open{
+    width: 0;
+    height: 0;
+    position:relative;
+    border-left: 250px solid transparent;
+    border-right: 252px solid transparent;
+    border-bottom: 200px solid rgb(140, 0, 0);
+    transform: translate(1px, -1252px);
+    display: none;
+}
+
+.container:hover .top-fold-open{
+    display: block;
+    z-index: -1;
+}
+
+.container:hover .top-fold-closed{
+    display:none;
+}
+
+.container:hover .card{
+    animation: slideout 0.5s ease-in-out;
+    transform:translate(40px, -480px);
+}
+
+@keyframes slideout{
+    from {transform:translate(40px, -340px)};
+    to {transform:translate(40px, -480px)};
+}
+.container:hover{
+    transform: translateY(50px);
+}
